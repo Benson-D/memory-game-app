@@ -11,19 +11,19 @@ body {
 .headline {
   text-align: center;
   margin: 2rem 0;
-  font-size: 4.2rem;
+  font-size: 2.8rem;
 }
 
 #game {
   max-width: 80rem;
   width: 100%;
-  height: 60vh;
-  margin: 20px auto;
+  height: 80vh;
+  padding: 0 1rem;
   display: grid;
-  grid-template-columns: repeat(5, minmax(85px, 160px));
-  grid-template-rows: repeat(2, minmax(80px, 160px));
-  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-template-rows: repeat(3, minmax(150px, min-content));
   justify-content: center;
+  grid-gap: 8px;
   box-shadow: none;
 }
 
@@ -32,12 +32,15 @@ div {
   margin: 2px 10px;
 }
 
-@media only screen and (max-width: 38.5em) {
+@media only screen and (min-width: 43em) {
   .headline {
-    font-size: 2.2rem;
+    font-size: 4.2rem;
   }
+
   #game {
-    grid-template-columns: repeat(3, 125px);
-    grid-template-rows: repeat(5, 100px);
+    grid-template-columns: repeat(5, minmax(100px, 220px));
+    grid-template-rows: repeat(2, minmax(80px, 220px));
+    grid-gap: 1rem;
+    padding: 0 4rem;
   }
 }
