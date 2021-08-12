@@ -73,7 +73,7 @@ function flipCard() {
   handleCardClick();
 }
 
-//Flip card back to starting color
+//Handle if not a match
 function unFlipCard() {
   twoFlips = true;
   setTimeout(() => {
@@ -83,7 +83,7 @@ function unFlipCard() {
   }, FOUND_MATCH_WAIT_MSECS);
 }
 
-//Handle clicking on a card, see if it's a match or not
+//Handle clicks, see if cards match or not
 function handleCardClick() {
   cardOne.classList[0] === cardTwo.classList[0] &&
   cardOne.dataset.id !== cardTwo.dataset.id
