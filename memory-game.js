@@ -3,6 +3,7 @@
 //Memory game: find matching pairs of cards and flip both of them
 let cardOne, cardTwo;
 const head = document.querySelector(".headline");
+const reset = document.querySelector(".game__btn");
 
 const FOUND_MATCH_WAIT_MSECS = 1000;
 const COLORS = [
@@ -103,5 +104,18 @@ const holdCard = () => {
 };
 
 function endGame() {
-  total.length === 10 && (head.innerText = "You won the game!");
+  total.length === 10 && (head.innerHTML = "You won the game!");
 }
+
+reset.addEventListener("click", function () {
+  for (let i = 0; i < COLORS.length; i++) {
+    total.pop();
+    let color = COLORS[i];
+    const element = document.querySelector(`.${color}`);
+    element.remove();
+  }
+
+  const newColors = shuffle(COLORS);
+  createCards(newColors);
+  head.innerHTML = "Memory Game!";
+});
