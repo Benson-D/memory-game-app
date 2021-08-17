@@ -107,7 +107,7 @@ function endGame() {
   total.length === 10 && (head.innerHTML = "You won the game!");
 }
 
-reset.addEventListener("click", function () {
+function resetGame() {
   for (let i = 0; i < COLORS.length; i++) {
     total.pop();
     let color = COLORS[i];
@@ -118,4 +118,6 @@ reset.addEventListener("click", function () {
   const newColors = shuffle(COLORS);
   createCards(newColors);
   head.innerHTML = "Memory Game!";
-});
+}
+
+reset.addEventListener("click", resetGame);
